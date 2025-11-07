@@ -1,0 +1,18 @@
+---
+// Analytics component for therapy landing pages
+// Google Analytics 4 tracking
+const { gaId } = Astro.props;
+---
+
+<!-- Google Analytics 4 -->
+{gaId && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+    <script define:vars={{ gaId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gaId);
+    </script>
+  </>
+)}

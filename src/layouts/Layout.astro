@@ -1,0 +1,239 @@
+---
+import Analytics from '../components/Analytics.astro';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- SEO Meta Tags -->
+		<meta name="keywords" content="Oakland Brainspotting, Brainspotting therapy Oakland, trauma therapy Oakland, PTSD treatment Bay Area, anxiety therapist Oakland, grief counseling Oakland" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:type" content="website" />
+
+		<!-- Schema.org markup -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": ["MedicalBusiness", "LocalBusiness"],
+			"name": "Oakland Brainspotting Therapy",
+			"description": "Brainspotting therapy for trauma, anxiety, and grief in Oakland, CA",
+			"url": "https://oaklandbrainspottingtherapy.com",
+			"telephone": "+15106940644",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "3637 Grand Ave",
+				"addressLocality": "Oakland",
+				"addressRegion": "CA",
+				"postalCode": "94609",
+				"addressCountry": "US"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 37.8336,
+				"longitude": -122.2639
+			},
+			"areaServed": [
+				{ "@type": "City", "name": "Oakland" },
+				{ "@type": "City", "name": "Berkeley" },
+				{ "@type": "City", "name": "Alameda" },
+				{ "@type": "City", "name": "Piedmont" }
+			],
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Therapy Services",
+				"itemListElement": [{
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "MedicalTherapy",
+						"name": "Brainspotting Therapy",
+						"description": "Brain-based therapy for trauma, anxiety, and grief"
+					}
+				}]
+			},
+			"employee": {
+				"@type": "Person",
+				"name": "Megan Gredesky",
+				"jobTitle": "Licensed Marriage and Family Therapist",
+				"hasCredential": "LMFT",
+				"url": "https://megangredesky.com"
+			}
+		})} />
+
+		<!-- Analytics Tracking -->
+		<Analytics gaId={import.meta.env.PUBLIC_GA_MEASUREMENT_ID} />
+
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		/* Oakland-inspired color palette */
+		--color-oakland-blue: #1B4965;
+		--color-oakland-green: #2D6A4F;
+		--color-oakland-gold: #CA6F48;
+		--color-oakland-cream: #F5F1E8;
+		--color-oakland-steel: #5C6B73;
+		--color-brain: #4A90A4;
+		--color-healing: #7FB069;
+		--color-white: #FFFFFF;
+		--color-text-dark: #2C3E50;
+		--color-text-light: #5C6B73;
+
+		/* Spacing */
+		--spacing-xs: 0.5rem;
+		--spacing-sm: 1rem;
+		--spacing-md: 2rem;
+		--spacing-lg: 4rem;
+		--spacing-xl: 6rem;
+
+		/* Typography */
+		--font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		--font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+		/* Shadows */
+		--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+		--shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+		--shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-family: var(--font-body);
+		background: var(--color-white);
+		color: var(--color-text-dark);
+		line-height: 1.6;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--font-heading);
+		font-weight: 600;
+		line-height: 1.2;
+		color: var(--color-oakland-blue);
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+
+	p {
+		margin-bottom: 1rem;
+		color: var(--color-text-dark);
+		font-size: 1.125rem;
+	}
+
+	a {
+		color: var(--color-oakland-blue);
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	a:hover {
+		color: var(--color-brain);
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 1rem 2rem;
+		font-size: 1.125rem;
+		font-weight: 600;
+		text-align: center;
+		border-radius: 8px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		border: none;
+		text-decoration: none;
+	}
+
+	.btn-primary {
+		background: var(--color-oakland-green);
+		color: var(--color-white);
+		box-shadow: var(--shadow-md);
+	}
+
+	.btn-primary:hover {
+		background: var(--color-healing);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
+		color: var(--color-white);
+	}
+
+	.btn-secondary {
+		background: transparent;
+		color: var(--color-oakland-blue);
+		border: 2px solid var(--color-oakland-blue);
+	}
+
+	.btn-secondary:hover {
+		background: var(--color-oakland-blue);
+		color: var(--color-white);
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 2rem;
+		}
+
+		h2 {
+			font-size: 1.75rem;
+		}
+
+		p {
+			font-size: 1rem;
+		}
+
+		.btn {
+			padding: 0.875rem 1.5rem;
+			font-size: 1rem;
+		}
+	}
+</style>

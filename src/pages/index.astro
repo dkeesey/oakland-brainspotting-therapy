@@ -1,16 +1,742 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+	title="Oakland Brainspotting Therapy | Megan Gredesky, LMFT | Trauma & Anxiety Treatment"
+	description="Oakland Brainspotting therapy with Megan Gredesky, LMFT. Certified Brainspotting Therapist specializing in trauma, anxiety, grief recovery. Serving Oakland & Bay Area. Book consultation."
+>
+	<!-- Header -->
+	<header class="header">
+		<div class="container">
+			<div class="header-content">
+				<div class="logo">
+					<h1 class="logo-text">Oakland Brainspotting Therapy</h1>
+					<p class="tagline">Brain-Based Healing in the Heart of Oakland</p>
+				</div>
+				<nav class="nav">
+					<a href="#about">About Brainspotting</a>
+					<a href="#therapist">Meet Megan</a>
+					<a href="#contact">Contact</a>
+					<a href="tel:+15106940644" class="phone-link" onclick="gtag('event', 'phone_click', { 'event_category': 'conversion', 'event_label': 'Header' })">(510) 694-0644</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<!-- Hero Section -->
+	<section class="hero">
+		<div class="hero-overlay"></div>
+		<div class="container hero-content">
+			<h1 class="hero-title">Oakland Brainspotting Therapy</h1>
+			<p class="hero-subtitle">Healing trauma, anxiety, and grief through brain-based therapy in Oakland and the Bay Area</p>
+
+			<div class="hero-cta">
+				<a href="tel:+15106940644" class="btn btn-primary" onclick="gtag('event', 'phone_click', { 'event_category': 'conversion', 'event_label': 'Hero' })">Schedule Free Consultation</a>
+				<a href="#about" class="btn btn-secondary">Learn About Brainspotting</a>
+			</div>
+
+			<div class="trust-badges">
+				<div class="badge">✓ Licensed LMFT</div>
+				<div class="badge">✓ Certified Brainspotting Therapist</div>
+				<div class="badge">✓ 9+ Years Experience</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- What is Brainspotting Section -->
+	<section id="about" class="section section-light">
+		<div class="container">
+			<h2>What is Brainspotting Therapy?</h2>
+			<div class="content-grid">
+				<div class="content-main">
+					<p class="lead">Brainspotting is a powerful, brain-based therapy that helps you access and process deep trauma, anxiety, and emotional pain. Unlike traditional talk therapy, Brainspotting works with your brain's natural ability to heal itself.</p>
+
+					<p>Oakland Brainspotting Therapy specializes in this evidence-based approach that uses your visual field to locate and process sources of emotional and physical distress. By identifying specific eye positions (called "brainspots"), we can access the parts of your brain where trauma is stored and help your nervous system release what's been held.</p>
+
+					<h3>How Brainspotting Works</h3>
+					<p>During a Brainspotting session, your therapist guides you to find eye positions that connect to your emotional or physical experience. While maintaining this eye position, you're supported in processing what comes up - whether that's memories, emotions, or body sensations. This allows your brain to work through trauma at a deep, subcortical level.</p>
+				</div>
+
+				<div class="benefits-box">
+					<h3>What Brainspotting Can Help With</h3>
+					<ul class="benefits-list">
+						<li>Trauma & PTSD</li>
+						<li>Anxiety & Panic</li>
+						<li>Depression</li>
+						<li>Grief & Loss</li>
+						<li>Chronic Pain</li>
+						<li>Performance Anxiety</li>
+						<li>Creative Blocks</li>
+						<li>Relationship Issues</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Brainspotting Section -->
+	<section class="section">
+		<div class="container">
+			<h2>Why Choose Brainspotting in Oakland?</h2>
+			<div class="features-grid">
+				<div class="feature">
+					<div class="feature-icon">🧠</div>
+					<h3>Evidence-Based</h3>
+					<p>Brainspotting is grounded in neuroscience research on trauma processing and brain-body healing.</p>
+				</div>
+				<div class="feature">
+					<div class="feature-icon">⚡</div>
+					<h3>Faster Results</h3>
+					<p>Many clients experience significant relief in fewer sessions compared to traditional therapy.</p>
+				</div>
+				<div class="feature">
+					<div class="feature-icon">💚</div>
+					<h3>Gentle & Safe</h3>
+					<p>You're in control. Process at your own pace in a supportive, non-judgmental environment.</p>
+				</div>
+				<div class="feature">
+					<div class="feature-icon">🎯</div>
+					<h3>Targeted Healing</h3>
+					<p>Access and release specific traumatic memories or emotional blocks directly.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Meet Megan Section -->
+	<section id="therapist" class="section section-light">
+		<div class="container">
+			<h2>Meet Your Oakland Brainspotting Therapist</h2>
+			<div class="therapist-grid">
+				<div class="therapist-image">
+					<img src="/images/megan-headshot.png" alt="Megan Gredesky, LMFT - Oakland Brainspotting Therapist" />
+				</div>
+				<div class="therapist-content">
+					<h3>Megan Gredesky, LMFT</h3>
+					<p class="credentials">Licensed Marriage & Family Therapist | Certified Brainspotting Practitioner</p>
+
+					<p>Megan Gredesky is a Licensed Marriage and Family Therapist and Certified Brainspotting Practitioner with over 9 years of experience helping clients heal from trauma, anxiety, and grief.</p>
+
+					<p>She founded Oakland Brainspotting Therapy to provide specialized, brain-based treatment for individuals seeking compassionate, effective support. Megan combines her expertise in Brainspotting with additional training in Drama Therapy, Play Therapy, and the Grief Recovery Method.</p>
+
+					<p>Megan works with empaths and highly sensitive people who are struggling with overwhelm, as well as performers and creatives experiencing blocks through Expansion Brainspotting. She also provides psychological assessments for fertility treatment as required in California.</p>
+
+					<div class="therapist-specialties">
+						<h4>Additional Specializations:</h4>
+						<ul>
+							<li>Trauma & PTSD Recovery</li>
+							<li>Grief & Loss Counseling</li>
+							<li>Anxiety & Depression Treatment</li>
+							<li>Fertility Support & Evaluations</li>
+							<li>Creative & Performance Blocks (Expansion Brainspotting)</li>
+							<li>Highly Sensitive Person (HSP) Support</li>
+						</ul>
+					</div>
+
+					<p class="additional-services">For additional therapy services including Drama Therapy, Play Therapy, and the Safe & Sound Protocol, visit <a href="https://megangredesky.com" target="_blank">MeganGredesky.com</a>.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Oakland & Bay Area Section -->
+	<section class="section section-oakland">
+		<div class="container">
+			<h2>Serving Oakland and the Bay Area</h2>
+			<div class="location-grid">
+				<div class="location-content">
+					<p class="lead">Oakland Brainspotting Therapy is conveniently located in Oakland, California, serving clients throughout the Bay Area.</p>
+
+					<div class="office-details">
+						<h3>Office Location</h3>
+						<p class="address">
+							3637 Grand Ave<br>
+							Oakland, CA 94609
+						</p>
+
+						<h3>Areas Served</h3>
+						<ul class="areas-list">
+							<li>Oakland</li>
+							<li>Berkeley</li>
+							<li>Alameda</li>
+							<li>Piedmont</li>
+							<li>Emeryville</li>
+							<li>Bay Area</li>
+						</ul>
+
+						<h3>Session Options</h3>
+						<p><strong>In-Person Sessions:</strong> Available at our Oakland office</p>
+						<p><strong>Telehealth:</strong> Virtual sessions throughout California</p>
+					</div>
+				</div>
+				<div class="map-container">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.3!2d-122.2484!3d37.8109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s3637+Grand+Ave%2C+Oakland%2C+CA+94610!5e0!3m2!1sen!2sus" width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Oakland Brainspotting Therapy - 3637 Grand Ave, Oakland"></iframe>
+					<p class="map-note">Located near Grand Lake, easily accessible from Berkeley, Alameda, and throughout Oakland</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ Section -->
+	<section class="section">
+		<div class="container">
+			<h2>Frequently Asked Questions About Brainspotting</h2>
+			<div class="faq-grid">
+				<div class="faq-item">
+					<h3>What happens in a Brainspotting session?</h3>
+					<p>In a Brainspotting session, we'll work together to identify an issue you'd like to address. I'll help you locate the eye position (brainspot) that connects to your experience. While maintaining this eye position, you'll process whatever emerges - memories, emotions, body sensations. Sessions are 50-60 minutes and typically happen weekly.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>How is Brainspotting different from talk therapy?</h3>
+					<p>Unlike traditional talk therapy, Brainspotting accesses the deeper, subcortical parts of your brain where trauma is stored. You don't need to fully verbalize or analyze your experience. The eye position allows your brain to process and release trauma directly, often leading to faster, deeper healing.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>How many sessions will I need?</h3>
+					<p>This varies by individual and the issue being addressed. Some clients experience significant relief in 3-6 sessions for specific traumas. Ongoing support typically involves weekly or bi-weekly sessions. We'll work together to create a plan that fits your needs and goals.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>Does insurance cover Brainspotting?</h3>
+					<p>Sessions are $200 each. I can provide a superbill for insurance reimbursement if your plan covers out-of-network mental health services. Many clients find their insurance provides partial or full reimbursement.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>Is Brainspotting safe?</h3>
+					<p>Yes. Brainspotting is a gentle, client-centered approach. You're always in control and can stop at any time. The process works with your brain's natural healing capacity, allowing you to process at your own pace in a safe, supportive environment.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>Who is a good candidate for Brainspotting?</h3>
+					<p>Brainspotting is effective for anyone experiencing trauma, anxiety, grief, or emotional blocks. It works well for highly sensitive people, empaths, performers, athletes, and anyone seeking deeper healing beyond traditional talk therapy.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final CTA Section -->
+	<section id="contact" class="section section-cta">
+		<div class="container cta-content">
+			<h2>Ready to Begin Healing?</h2>
+			<p class="lead">Schedule your free 15-minute consultation to learn how Brainspotting can help you heal from trauma, anxiety, or grief.</p>
+
+			<div class="cta-buttons">
+				<a href="tel:+15106940644" class="btn btn-primary btn-large" onclick="gtag('event', 'phone_click', { 'event_category': 'conversion', 'event_label': 'CTA Section' })">Call (510) 694-0644</a>
+				<a href="https://megangredesky.clientsecure.me" target="_blank" class="btn btn-secondary btn-large" onclick="gtag('event', 'booking_click', { 'event_category': 'conversion', 'event_label': 'CTA Section' })">Book Online</a>
+			</div>
+
+			<p class="cta-note">Serving Oakland, Berkeley, Alameda, and throughout the Bay Area • In-person and telehealth available</p>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-grid">
+				<div class="footer-col">
+					<h3>Oakland Brainspotting Therapy</h3>
+					<p>Brain-Based Healing in Oakland</p>
+					<p class="footer-license">Licensed Marriage & Family Therapist<br>Megan Gredesky, LMFT</p>
+				</div>
+
+				<div class="footer-col">
+					<h4>Contact</h4>
+					<p>
+						3637 Grand Ave<br>
+						Oakland, CA 94609<br>
+						<a href="tel:+15106940644" onclick="gtag('event', 'phone_click', { 'event_category': 'conversion', 'event_label': 'Footer' })">(510) 694-0644</a>
+					</p>
+				</div>
+
+				<div class="footer-col">
+					<h4>Hours</h4>
+					<p>
+						Monday-Thursday: 9am-6pm<br>
+						Friday: 9am-3pm<br>
+						Weekend: By appointment
+					</p>
+				</div>
+
+				<div class="footer-col">
+					<h4>Additional Services</h4>
+					<p>For Drama Therapy, Play Therapy, and other services, visit <a href="https://megangredesky.com" target="_blank">MeganGredesky.com</a></p>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p>&copy; 2024 Oakland Brainspotting Therapy. All rights reserved.</p>
+				<p class="footer-note">Oakland Brainspotting Therapy is a practice of Megan Gredesky, LMFT.</p>
+			</div>
+		</div>
+	</footer>
+</Layout>
+
+<style>
+	/* Header */
+	.header {
+		background: var(--color-white);
+		box-shadow: var(--shadow-sm);
+		padding: 1rem 0;
+		position: sticky;
+		top: 0;
+		z-index: 100;
+	}
+
+	.header-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.logo-text {
+		font-size: 1.5rem;
+		color: var(--color-oakland-blue);
+		margin: 0;
+	}
+
+	.tagline {
+		font-size: 0.875rem;
+		color: var(--color-oakland-green);
+		margin: 0.25rem 0 0 0;
+		font-weight: 500;
+	}
+
+	.nav {
+		display: flex;
+		gap: 1.5rem;
+		align-items: center;
+	}
+
+	.nav a {
+		font-weight: 500;
+		font-size: 1rem;
+	}
+
+	.phone-link {
+		background: var(--color-oakland-green);
+		color: var(--color-white) !important;
+		padding: 0.5rem 1rem;
+		border-radius: 6px;
+		transition: background 0.3s ease;
+	}
+
+	.phone-link:hover {
+		background: var(--color-healing);
+	}
+
+	/* Hero */
+	.hero {
+		position: relative;
+		background: linear-gradient(135deg, var(--color-oakland-blue) 0%, var(--color-brain) 100%);
+		color: var(--color-white);
+		padding: 6rem 0;
+		text-align: center;
+		overflow: hidden;
+	}
+
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat center;
+		background-size: cover;
+		opacity: 0.3;
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 2;
+	}
+
+	.hero-title {
+		font-size: 3rem;
+		color: var(--color-white);
+		margin-bottom: 1rem;
+		text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	}
+
+	.hero-subtitle {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+		color: var(--color-oakland-cream);
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.hero-cta {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: 3rem;
+	}
+
+	.hero-cta .btn-secondary {
+		background: transparent;
+		color: var(--color-white);
+		border: 2px solid var(--color-white);
+	}
+
+	.hero-cta .btn-secondary:hover {
+		background: var(--color-white);
+		color: var(--color-oakland-blue);
+	}
+
+	.trust-badges {
+		display: flex;
+		gap: 2rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.badge {
+		background: rgba(255, 255, 255, 0.2);
+		padding: 0.75rem 1.5rem;
+		border-radius: 8px;
+		font-weight: 600;
+		backdrop-filter: blur(10px);
+	}
+
+	/* Sections */
+	.section {
+		padding: var(--spacing-lg) 0;
+	}
+
+	.section-light {
+		background: var(--color-oakland-cream);
+	}
+
+	.section-oakland {
+		background: linear-gradient(to bottom, var(--color-oakland-cream), var(--color-white));
+	}
+
+	.lead {
+		font-size: 1.25rem;
+		color: var(--color-text-light);
+		margin-bottom: 2rem;
+	}
+
+	/* Content Grids */
+	.content-grid {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 3rem;
+		margin-top: 2rem;
+	}
+
+	.benefits-box {
+		background: var(--color-white);
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: var(--shadow-md);
+		border-left: 4px solid var(--color-oakland-green);
+	}
+
+	.benefits-list {
+		list-style: none;
+		padding: 0;
+	}
+
+	.benefits-list li {
+		padding: 0.75rem 0;
+		border-bottom: 1px solid var(--color-oakland-cream);
+		position: relative;
+		padding-left: 1.5rem;
+	}
+
+	.benefits-list li:before {
+		content: "✓";
+		position: absolute;
+		left: 0;
+		color: var(--color-oakland-green);
+		font-weight: bold;
+	}
+
+	.benefits-list li:last-child {
+		border-bottom: none;
+	}
+
+	/* Features Grid */
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.feature {
+		background: var(--color-white);
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: var(--shadow-sm);
+		text-align: center;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.feature:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-md);
+	}
+
+	.feature-icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	/* Therapist Section */
+	.therapist-grid {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 3rem;
+		margin-top: 2rem;
+	}
+
+	.therapist-image img {
+		width: 100%;
+		height: auto;
+		border-radius: 12px;
+		box-shadow: var(--shadow-md);
+		display: block;
+	}
+
+	.credentials {
+		color: var(--color-oakland-green);
+		font-weight: 600;
+		font-size: 1.125rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.therapist-specialties {
+		background: var(--color-oakland-cream);
+		padding: 1.5rem;
+		border-radius: 8px;
+		margin: 2rem 0;
+	}
+
+	.therapist-specialties ul {
+		margin-top: 1rem;
+		padding-left: 1.5rem;
+	}
+
+	.therapist-specialties li {
+		margin-bottom: 0.5rem;
+	}
+
+	.additional-services {
+		margin-top: 2rem;
+		font-style: italic;
+		color: var(--color-text-light);
+	}
+
+	/* Location */
+	.location-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		margin-top: 2rem;
+	}
+
+	.office-details {
+		background: var(--color-white);
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: var(--shadow-sm);
+	}
+
+	.address {
+		font-size: 1.125rem;
+		margin: 1rem 0;
+		font-weight: 500;
+	}
+
+	.areas-list {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.5rem;
+	}
+
+	.areas-list li:before {
+		content: "📍 ";
+	}
+
+	.map-container {
+		position: relative;
+	}
+
+	.map-container iframe {
+		display: block;
+		box-shadow: var(--shadow-md);
+	}
+
+	.map-note {
+		color: var(--color-oakland-cream);
+		font-size: 0.875rem;
+	}
+
+	/* FAQ */
+	.faq-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.faq-item {
+		background: var(--color-white);
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: var(--shadow-sm);
+	}
+
+	.faq-item h3 {
+		color: var(--color-oakland-green);
+		margin-bottom: 1rem;
+	}
+
+	/* CTA Section */
+	.section-cta {
+		background: linear-gradient(135deg, var(--color-oakland-green) 0%, var(--color-healing) 100%);
+		color: var(--color-white);
+		text-align: center;
+	}
+
+	.section-cta h2 {
+		color: var(--color-white);
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.section-cta .lead {
+		color: var(--color-oakland-cream);
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin: 2rem 0;
+	}
+
+	.btn-large {
+		padding: 1.25rem 2.5rem;
+		font-size: 1.25rem;
+	}
+
+	.cta-note {
+		color: var(--color-oakland-cream);
+		font-size: 0.875rem;
+		margin-top: 2rem;
+	}
+
+	/* Footer */
+	.footer {
+		background: var(--color-oakland-blue);
+		color: rgba(255, 255, 255, 0.9);
+		padding: 3rem 0 1rem;
+	}
+
+	.footer h3, .footer h4 {
+		color: var(--color-white);
+		margin-bottom: 1rem;
+	}
+
+	.footer p {
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	.footer a {
+		color: var(--color-white);
+		text-decoration: underline;
+	}
+
+	.footer a:hover {
+		color: var(--color-healing);
+	}
+
+	.footer-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.footer-license {
+		font-size: 0.875rem;
+		color: rgba(255, 255, 255, 0.85);
+		margin-top: 1rem;
+	}
+
+	.footer-bottom {
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
+		padding-top: 2rem;
+		text-align: center;
+		font-size: 0.875rem;
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	.footer-note {
+		color: rgba(255, 255, 255, 0.85);
+		margin-top: 0.5rem;
+	}
+
+	/* Responsive */
+	@media (max-width: 1024px) {
+		.content-grid,
+		.therapist-grid,
+		.location-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.features-grid {
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		}
+	}
+
+	@media (max-width: 768px) {
+		.header-content {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.nav {
+			flex-direction: column;
+			width: 100%;
+			gap: 0.75rem;
+		}
+
+		.hero-title {
+			font-size: 2rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.125rem;
+		}
+
+		.hero-cta {
+			flex-direction: column;
+		}
+
+		.trust-badges {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.faq-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.footer-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
