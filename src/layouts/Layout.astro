@@ -1,5 +1,5 @@
 ---
-import Analytics from '../components/Analytics.astro';
+import GTMAnalytics from '../components/GTMAnalytics.astro';
 
 interface Props {
 	title: string;
@@ -78,7 +78,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		})} />
 
 		<!-- Google Analytics 4 - Direct Implementation -->
-		<Analytics
+		<GTMAnalytics
 			gaId="G-H4843GTPTX"
 		/>
 
