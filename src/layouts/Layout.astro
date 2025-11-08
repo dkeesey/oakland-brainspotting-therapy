@@ -77,8 +77,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			}
 		})} />
 
-		<!-- Analytics Tracking -->
-		<Analytics gaId={import.meta.env.PUBLIC_GA_MEASUREMENT_ID} />
+		<!-- Google Analytics 4 - Direct Implementation -->
+		<Analytics
+			gaId="G-H4843GTPTX"
+		/>
 
 		<title>{title}</title>
 	</head>
