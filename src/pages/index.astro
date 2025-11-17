@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ConsultationButton from '../components/ConsultationButton.astro';
 ---
 
 <Layout
@@ -31,7 +32,7 @@ import Layout from '../layouts/Layout.astro';
 			<p class="hero-subtitle">Healing trauma, anxiety, and grief through brain-based therapy in Oakland and the Bay Area</p>
 
 			<div class="hero-cta">
-				<a href="https://megangredesky.clientsecure.me" target="_blank" class="btn btn-primary" onclick="gtag('event', 'booking_click', { 'event_category': 'conversion', 'event_label': 'Hero' })">Schedule Free Consultation</a>
+				<ConsultationButton variant="primary" location="hero" />
 				<a href="#about" class="btn btn-secondary">Learn About Brainspotting</a>
 			</div>
 
@@ -222,7 +223,7 @@ import Layout from '../layouts/Layout.astro';
 			<p class="lead">Schedule your free 15-minute consultation to learn how Brainspotting can help you heal from trauma, anxiety, or grief.</p>
 
 			<div class="cta-buttons">
-				<a href="https://megangredesky.clientsecure.me" target="_blank" class="btn btn-primary btn-large" onclick="gtag('event', 'booking_click', { 'event_category': 'conversion', 'event_label': 'CTA Section' })">Schedule Free Consultation</a>
+				<ConsultationButton variant="primary" size="large" location="cta_section" />
 			</div>
 
 			<p class="cta-note">Serving Oakland, Berkeley, Alameda, and throughout the Bay Area • In-person and telehealth available</p>
@@ -245,7 +246,7 @@ import Layout from '../layouts/Layout.astro';
 						3637 Grand Ave<br>
 						Oakland, CA 94609<br>
 						Phone: (510) 556-3699<br>
-						<a href="https://megangredesky.clientsecure.me" target="_blank">Schedule Online</a>
+						<a href="https://megan-gredesky.clientsecure.me" target="_blank" class="consultation-cta-footer-link">Schedule Online</a>
 					</p>
 				</div>
 
@@ -271,6 +272,39 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</footer>
 </Layout>
+
+<script>
+	// GA4 tracking for footer consultation link
+	document.querySelectorAll('.consultation-cta-footer-link').forEach(link => {
+		link.addEventListener('click', () => {
+			if (typeof window.gtag === 'function') {
+				window.gtag('event', 'schedule_consultation_click', {
+					event_category: 'conversion',
+					event_label: 'Schedule Consultation - footer',
+					cta_location: 'footer',
+					value: 1
+				});
+
+				window.gtag('event', 'booking_click', {
+					event_category: 'conversion',
+					event_label: 'footer',
+					cta_location: 'footer'
+				});
+			}
+
+			if (typeof window.dataLayer !== 'undefined') {
+				window.dataLayer.push({
+					event: 'schedule_consultation_click',
+					event_category: 'conversion',
+					event_label: 'Schedule Consultation - footer',
+					cta_location: 'footer'
+				});
+			}
+
+			console.log('[GA4] Footer consultation link clicked');
+		});
+	});
+</script>
 
 <style>
 	/* Header */

@@ -1,0 +1,87 @@
+---
+/**
+ * ConsultationButton Component
+ *
+ * Reusable button component for "Schedule a Consultation" CTAs with built-in GA4 tracking.
+ * This component creates consistent consultation buttons with automatic event tracking
+ * across all pages on the Oakland Brainspotting Therapy site.
+ *
+ * Usage:
+ * <ConsultationButton variant="primary" size="default" location="hero" />
+ * <ConsultationButton variant="secondary" size="large" location="footer" text="Get Started" />
+ */
+
+export interface Props {
+  variant?: 'primary' | 'secondary';
+  size?: 'default' | 'large';
+  class?: string;
+  location?: string; // Track where the button appears (e.g., 'hero', 'footer', 'cta_section')
+  text?: string; // Custom button text
+  href?: string; // Optional custom URL (defaults to SimplePractice)
+}
+
+const {
+  variant = 'primary',
+  size = 'default',
+  class: className = '',
+  location = 'unknown',
+  text = 'Schedule Free Consultation',
+  href = 'https://megan-gredesky.clientsecure.me'
+} = Astro.props;
+
+// Build button classes
+const buttonClasses = [
+  'btn',
+  variant === 'primary' ? 'btn-primary' : 'btn-secondary',
+  size === 'large' ? 'btn-large' : '',
+  `consultation-cta-${location}`,
+  className
+].filter(Boolean).join(' ');
+---
+
+<a
+  href={href}
+  target="_blank"
+  class={buttonClasses}
+  data-location={location}
+>
+  {text}
+</a>
+
+<script define:vars={{ location }}>
+  // GA4 Conversion Tracking
+  // This script runs once per component instance
+  document.querySelectorAll(`.consultation-cta-${location}`).forEach(button => {
+    button.addEventListener('click', () => {
+      // Track with GA4 if available
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'schedule_consultation_click', {
+          event_category: 'conversion',
+          event_label: `Schedule Consultation - ${location}`,
+          cta_location: location,
+          value: 1
+        });
+
+        // Also send as a booking_click event for consistency
+        window.gtag('event', 'booking_click', {
+          event_category: 'conversion',
+          event_label: location,
+          cta_location: location
+        });
+      }
+
+      // Track with dataLayer for GTM if available
+      if (typeof window.dataLayer !== 'undefined') {
+        window.dataLayer.push({
+          event: 'schedule_consultation_click',
+          event_category: 'conversion',
+          event_label: `Schedule Consultation - ${location}`,
+          cta_location: location
+        });
+      }
+
+      // Console log for debugging (can be removed in production)
+      console.log('[GA4] Consultation button clicked:', location);
+    });
+  });
+</script>

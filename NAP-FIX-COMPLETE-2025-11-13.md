@@ -27,7 +27,7 @@
 2. **Hero CTA Button** (index.astro:35)
    - Before: "Schedule Free Consultation" → called wrong phone
    - After: "Schedule Free Consultation" → SimplePractice booking URL
-   - URL: https://megangredesky.clientsecure.me
+   - URL: https://megan-gredesky.clientsecure.me
 
 3. **CTA Section** (index.astro:226)
    - Before: Two buttons (phone + SimplePractice)
@@ -268,7 +268,7 @@
 - **Address**: 3637 Grand Ave, Oakland, CA 94609
 - **Phone**: (510) 556-3699
 - **Website**: oaklandbrainspottingtherapy.com
-- **Booking**: https://megangredesky.clientsecure.me
+- **Booking**: https://megan-gredesky.clientsecure.me
 
 **Old/Wrong Information (DO NOT USE)**:
 - ❌ Phone: 510-694-0644 (old Google Voice)
