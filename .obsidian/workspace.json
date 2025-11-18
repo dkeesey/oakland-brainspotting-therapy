@@ -170,5 +170,20 @@
     }
   },
   "active": "228b8280b8d33170",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "src/pages/index.astro.tmp.92622.1763419807461",
+    "src/components/GoogleMap.astro",
+    "src/pages/how-brainspotting-works.astro.tmp.92622.1763419197649",
+    "src/components/Navigation.astro",
+    "src/pages/trauma.astro.tmp.92622.1763418648445",
+    "dist/sitemap-index.xml",
+    "dist/sitemap-0.xml",
+    "dist/index.html",
+    "dist/trauma/index.html",
+    "dist/trauma",
+    "dist/performers/index.html",
+    "dist/images/megan-headshot.png",
+    "dist/images/hero-option-oakland-sunset.jpg",
+    "dist/favicon.svg"
+  ]
 }

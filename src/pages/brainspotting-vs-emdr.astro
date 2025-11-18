@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ConsultationButton from '../components/ConsultationButton.astro';
+import Navigation from '../components/Navigation.astro';
 ---
 
 <Layout
@@ -14,12 +15,7 @@ import ConsultationButton from '../components/ConsultationButton.astro';
 					<h1 class="logo-text">Oakland Brainspotting Therapy</h1>
 					<p class="tagline">Brain-Based Healing in the Heart of Oakland</p>
 				</div>
-				<nav class="nav">
-					<a href="/">Home</a>
-					<a href="/how-brainspotting-works">How It Works</a>
-					<a href="/faq">FAQs</a>
-					<a href="/about-megan">About</a>
-				</nav>
+				<Navigation />
 			</div>
 		</div>
 	</header>
@@ -189,7 +185,7 @@ import ConsultationButton from '../components/ConsultationButton.astro';
 					</ul>
 				</div>
 				<div class="footer-col">
-					<h4>Contact</h4>
+					<h4 id="contact">Contact</h4>
 					<p>
 						3637 Grand Ave<br>
 						Oakland, CA 94609<br>
