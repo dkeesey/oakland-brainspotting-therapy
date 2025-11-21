@@ -82,10 +82,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		})} />
 
 		<!-- Analytics: GA4 + Microsoft Clarity + Facebook Pixel -->
+		<!-- IDs configured via Cloudflare Pages environment variables -->
 		<GTMAnalytics
-			ga4Id="G-H4843GTPTX"
-			clarityId="u2pkll38k2"
-			fbPixelId="969465146240881"
+			ga4Id={import.meta.env.PUBLIC_GA4_ID}
+			clarityId={import.meta.env.PUBLIC_CLARITY_ID}
+			fbPixelId={import.meta.env.PUBLIC_FB_PIXEL_ID}
 		/>
 
 		<title>{title}</title>
