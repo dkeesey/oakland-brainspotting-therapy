@@ -250,6 +250,64 @@ import GoogleMap from '../components/GoogleMap.astro';
 		</div>
 	</section>
 
+	<!-- Areas We Serve Section -->
+	<section class="section section-light">
+		<div class="container">
+			<h2>Areas We Serve in the East Bay</h2>
+			<p class="lead">Oakland Brainspotting Therapy serves clients throughout the East Bay with in-person and telehealth sessions.</p>
+			
+			<div class="location-grid">
+				<div class="location-card">
+					<h3>🌉 Oakland</h3>
+					<p>Our home base in Grand Lake. Convenient in-person sessions in the heart of Oakland.</p>
+					<a href="/what-is-brainspotting" class="btn btn-secondary">Learn About Brainspotting →</a>
+				</div>
+				
+				<div class="location-card">
+					<h3>🎓 Berkeley</h3>
+					<p>Just 10 minutes from downtown Berkeley. Serving UC Berkeley students, faculty, and residents.</p>
+					<a href="/berkeley" class="btn btn-secondary">Berkeley Brainspotting →</a>
+				</div>
+				
+				<div class="location-card">
+					<h3>🏝️ Alameda</h3>
+					<p>Easy access from Alameda via Park Street Bridge or Posey Tube. Telehealth also available.</p>
+					<a href="/alameda" class="btn btn-secondary">Alameda Brainspotting →</a>
+				</div>
+				
+				<div class="location-card">
+					<h3>🏡 Piedmont</h3>
+					<p>Just 5 minutes from Piedmont via Grand Ave. Discreet, professional setting.</p>
+					<a href="/piedmont" class="btn btn-secondary">Piedmont Brainspotting →</a>
+				</div>
+				
+				<div class="location-card">
+					<h3>🌳 Walnut Creek</h3>
+					<p>Telehealth sessions for Walnut Creek residents. In-person option via BART.</p>
+					<a href="/walnut-creek" class="btn btn-secondary">Walnut Creek Brainspotting →</a>
+				</div>
+				
+				<div class="location-card">
+					<h3>🏘️ San Leandro</h3>
+					<p>15-20 minutes from San Leandro. Serving the diverse San Leandro community.</p>
+					<a href="/san-leandro" class="btn btn-secondary">San Leandro Brainspotting →</a>
+				</div>
+				
+				<div class="location-card">
+					<h3>💼 Emeryville</h3>
+					<p>Just 10 minutes from Emeryville. Understanding of tech industry stress and burnout.</p>
+					<a href="/emeryville" class="btn btn-secondary">Emeryville Brainspotting →</a>
+				</div>
+				
+				<div class="location-card">
+					<h3>🌐 Telehealth</h3>
+					<p>Secure online sessions available throughout California. Same effectiveness, no commute.</p>
+					<a href="/conditions" class="btn btn-secondary">Conditions We Treat →</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- Final CTA Section -->
 	<section id="contact" class="section section-cta">
 		<div class="container cta-content">
@@ -605,9 +663,39 @@ import GoogleMap from '../components/GoogleMap.astro';
 	/* Location */
 	.location-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 3rem;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
 		margin-top: 2rem;
+	}
+	
+	.location-card {
+		background: var(--color-white);
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: var(--shadow-sm);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		text-align: center;
+	}
+	
+	.location-card:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--shadow-md);
+	}
+	
+	.location-card h3 {
+		color: var(--color-oakland-blue);
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+	
+	.location-card p {
+		color: var(--color-text-light);
+		margin-bottom: 1.5rem;
+		min-height: 60px;
+	}
+	
+	.location-card .btn {
+		width: 100%;
 	}
 
 	.office-details {
