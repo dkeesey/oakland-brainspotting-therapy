@@ -1,6 +1,6 @@
 ---
-import GTMAnalytics from '../components/GTMAnalytics.astro';
-import '../styles/components.css';
+import GTMAnalytics from "../components/GTMAnalytics.astro";
+import "../styles/components.css";
 
 interface Props {
 	title: string;
@@ -22,64 +22,98 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link rel="canonical" href={canonicalURL} />
 
 		<!-- SEO Meta Tags -->
-		<meta name="keywords" content="Oakland Brainspotting, Brainspotting therapy Oakland, trauma therapy Oakland, PTSD treatment Bay Area, anxiety therapist Oakland, grief counseling Oakland" />
+		<meta
+			name="keywords"
+			content="Oakland Brainspotting, Brainspotting therapy Oakland, trauma therapy Oakland, PTSD treatment Bay Area, anxiety therapist Oakland, grief counseling Oakland"
+		/>
 
 		<!-- Open Graph -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:type" content="website" />
+		<meta
+			property="og:image"
+			content={new URL("/og-image.jpg", Astro.site)}
+		/>
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta
+			property="og:image:alt"
+			content="Oakland Brainspotting Therapy - Megan Gredesky, LMFT"
+		/>
+		<meta property="og:site_name" content="Oakland Brainspotting Therapy" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta
+			name="twitter:image"
+			content={new URL("/og-image.jpg", Astro.site)}
+		/>
+		<meta
+			name="twitter:image:alt"
+			content="Oakland Brainspotting Therapy - Megan Gredesky, LMFT"
+		/>
 
 		<!-- Schema.org markup -->
-		<script type="application/ld+json" set:html={JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": ["MedicalBusiness", "LocalBusiness"],
-			"name": "Oakland Brainspotting Therapy",
-			"description": "Brainspotting therapy for trauma, anxiety, and grief in Oakland, CA",
-			"url": "https://oaklandbrainspottingtherapy.com",
-			"telephone": "+15105563699",
-			"address": {
-				"@type": "PostalAddress",
-				"streetAddress": "3637 Grand Ave",
-				"addressLocality": "Oakland",
-				"addressRegion": "CA",
-				"postalCode": "94609",
-				"addressCountry": "US"
-			},
-			"geo": {
-				"@type": "GeoCoordinates",
-				"latitude": 37.8336,
-				"longitude": -122.2639
-			},
-			"areaServed": [
-				{ "@type": "City", "name": "Oakland" },
-				{ "@type": "City", "name": "Berkeley" },
-				{ "@type": "City", "name": "Alameda" },
-				{ "@type": "City", "name": "Piedmont" },
-				{ "@type": "City", "name": "Emeryville" },
-				{ "@type": "City", "name": "San Leandro" },
-				{ "@type": "City", "name": "Walnut Creek" }
-			],
-			"hasOfferCatalog": {
-				"@type": "OfferCatalog",
-				"name": "Therapy Services",
-				"itemListElement": [{
-					"@type": "Offer",
-					"itemOffered": {
-						"@type": "MedicalTherapy",
-						"name": "Brainspotting Therapy",
-						"description": "Brain-based therapy for trauma, anxiety, and grief"
-					}
-				}]
-			},
-			"employee": {
-				"@type": "Person",
-				"name": "Megan Gredesky",
-				"jobTitle": "Licensed Marriage and Family Therapist",
-				"hasCredential": "LMFT",
-				"url": "https://megangredesky.com"
-			}
-		})} />
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": ["MedicalBusiness", "LocalBusiness"],
+				name: "Oakland Brainspotting Therapy",
+				description:
+					"Brainspotting therapy for trauma, anxiety, and grief in Oakland, CA",
+				url: "https://oaklandbrainspottingtherapy.com",
+				telephone: "+15105563699",
+				address: {
+					"@type": "PostalAddress",
+					streetAddress: "3637 Grand Ave",
+					addressLocality: "Oakland",
+					addressRegion: "CA",
+					postalCode: "94609",
+					addressCountry: "US",
+				},
+				geo: {
+					"@type": "GeoCoordinates",
+					latitude: 37.8336,
+					longitude: -122.2639,
+				},
+				areaServed: [
+					{ "@type": "City", name: "Oakland" },
+					{ "@type": "City", name: "Berkeley" },
+					{ "@type": "City", name: "Alameda" },
+					{ "@type": "City", name: "Piedmont" },
+					{ "@type": "City", name: "Emeryville" },
+					{ "@type": "City", name: "San Leandro" },
+					{ "@type": "City", name: "Walnut Creek" },
+				],
+				hasOfferCatalog: {
+					"@type": "OfferCatalog",
+					name: "Therapy Services",
+					itemListElement: [
+						{
+							"@type": "Offer",
+							itemOffered: {
+								"@type": "MedicalTherapy",
+								name: "Brainspotting Therapy",
+								description:
+									"Brain-based therapy for trauma, anxiety, and grief",
+							},
+						},
+					],
+				},
+				employee: {
+					"@type": "Person",
+					name: "Megan Gredesky",
+					jobTitle: "Licensed Marriage and Family Therapist",
+					hasCredential: "LMFT",
+					url: "https://megangredesky.com",
+				},
+			})}
+		/>
 
 		<!-- Analytics: GA4 + Microsoft Clarity + Facebook Pixel -->
 		<!-- IDs configured via Cloudflare Pages environment variables -->
@@ -99,16 +133,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <style is:global>
 	:root {
 		/* Oakland-inspired color palette */
-		--color-oakland-blue: #1B4965;
-		--color-oakland-green: #2D6A4F;
-		--color-oakland-gold: #CA6F48;
-		--color-oakland-cream: #F5F1E8;
-		--color-oakland-steel: #5C6B73;
-		--color-brain: #4A90A4;
-		--color-healing: #7FB069;
-		--color-white: #FFFFFF;
-		--color-text-dark: #2C3E50;
-		--color-text-light: #5C6B73;
+		--color-oakland-blue: #1b4965;
+		--color-oakland-green: #2d6a4f;
+		--color-oakland-gold: #ca6f48;
+		--color-oakland-cream: #f5f1e8;
+		--color-oakland-steel: #5c6b73;
+		--color-brain: #4a90a4;
+		--color-healing: #7fb069;
+		--color-white: #ffffff;
+		--color-text-dark: #2c3e50;
+		--color-text-light: #5c6b73;
 
 		/* Spacing */
 		--spacing-xs: 0.5rem;
@@ -118,8 +152,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		--spacing-xl: 6rem;
 
 		/* Typography */
-		--font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-		--font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		--font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+			sans-serif;
+		--font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+			sans-serif;
 
 		/* Shadows */
 		--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
@@ -146,7 +182,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		padding: 0;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		font-family: var(--font-heading);
 		font-weight: 600;
 		line-height: 1.2;

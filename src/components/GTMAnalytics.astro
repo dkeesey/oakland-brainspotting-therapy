@@ -75,7 +75,10 @@ if (gtmId && !gtmId.startsWith('GTM-')) {
       gtag('js', new Date());
       gtag('config', ga4Id, {
         'send_page_view': true,
-        'cookie_flags': 'SameSite=None;Secure'
+        'cookie_flags': 'SameSite=None;Secure',
+        'linker': {
+          'domains': ['findbrainspottingtherapy.com', 'oaklandbrainspottingtherapy.com', 'megangredesky.com', 'clientsecure.me']
+        }
       });
     </script>
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`} is:inline></script>
@@ -140,7 +143,7 @@ if (gtmId && !gtmId.startsWith('GTM-')) {
         const buttonText = this.textContent.trim();
         const buttonHref = this.href;
 
-        // Push to dataLayer for GTM
+        // Push to dataLayer for GTM compatibility
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           'event': 'cta_click',
@@ -149,6 +152,32 @@ if (gtmId && !gtmId.startsWith('GTM-')) {
           'page_location': window.location.pathname
         });
 
+        // Send to GA4 directly using gtag
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'cta_click', {
+            'cta_text': buttonText,
+            'cta_url': buttonHref,
+            'page_location': window.location.pathname
+          });
+        }
+
+        // Specific conversion event for scheduling
+        if (buttonHref.includes('clientsecure')) {
+          window.dataLayer.push({
+            'event': 'consultation_scheduled',
+            'button_text': buttonText,
+            'page_location': window.location.pathname
+          });
+
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'consultation_scheduled', {
+              'button_text': buttonText,
+              'page_location': window.location.pathname
+            });
+          }
+          console.log('🎉 Consultation schedule click tracked');
+        }
+
         console.log('✅ CTA click tracked:', buttonText);
       });
     });
@@ -156,12 +185,21 @@ if (gtmId && !gtmId.startsWith('GTM-')) {
     // Track phone clicks
     document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
       link.addEventListener('click', function() {
+        const phoneNumber = this.href.replace('tel:', '');
+
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           'event': 'phone_click',
-          'phone_number': this.href.replace('tel:', ''),
+          'phone_number': phoneNumber,
           'page_location': window.location.pathname
         });
+
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'phone_click', {
+            'phone_number': phoneNumber,
+            'page_location': window.location.pathname
+          });
+        }
         console.log('✅ Phone click tracked');
       });
     });
@@ -169,12 +207,21 @@ if (gtmId && !gtmId.startsWith('GTM-')) {
     // Track email clicks
     document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
       link.addEventListener('click', function() {
+        const email = this.href.replace('mailto:', '');
+
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           'event': 'email_click',
-          'email': this.href.replace('mailto:', ''),
+          'email': email,
           'page_location': window.location.pathname
         });
+
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'email_click', {
+            'email': email,
+            'page_location': window.location.pathname
+          });
+        }
         console.log('✅ Email click tracked');
       });
     });
@@ -195,6 +242,13 @@ if (gtmId && !gtmId.startsWith('GTM-')) {
             'scroll_percent': depth,
             'page_location': window.location.pathname
           });
+
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'scroll', {
+              'percent_scrolled': depth,
+              'page_location': window.location.pathname
+            });
+          }
           console.log('✅ Scroll depth tracked:', depth + '%');
         }
       });
@@ -203,12 +257,21 @@ if (gtmId && !gtmId.startsWith('GTM-')) {
     // Track form submissions
     document.querySelectorAll('form').forEach(function(form) {
       form.addEventListener('submit', function(e) {
+        const formId = this.id || 'unnamed_form';
+
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           'event': 'form_submit',
-          'form_id': this.id || 'unnamed_form',
+          'form_id': formId,
           'page_location': window.location.pathname
         });
+
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'form_submit', {
+            'form_id': formId,
+            'page_location': window.location.pathname
+          });
+        }
         console.log('✅ Form submission tracked');
       });
     });
