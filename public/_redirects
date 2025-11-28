@@ -1,0 +1,16 @@
+# Cloudflare Pages Redirects
+# Old URLs → New URLs (301 Permanent Redirects)
+# Both with and without trailing slashes for complete coverage
+
+# Old service page URLs → new simplified URLs
+/brainspotting-for-trauma /trauma 301
+/brainspotting-for-trauma/ /trauma/ 301
+
+/brainspotting-for-anxiety /anxiety 301
+/brainspotting-for-anxiety/ /anxiety/ 301
+
+/brainspotting-for-grief /grief 301
+/brainspotting-for-grief/ /grief/ 301
+
+# Contact page redirect (if old URL exists)
+/contact /index.html#contact 301
