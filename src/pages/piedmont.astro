@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ConsultationButton from '../components/ConsultationButton.astro';
 ---
 
 <Layout 
@@ -16,9 +17,7 @@ import Layout from '../layouts/Layout.astro';
 					<p class="text-xl text-primary-100 leading-relaxed mb-8">
 						Certified Brainspotting therapist serving Piedmont and surrounding areas. Compassionate, brain-based trauma therapy in nearby Oakland.
 					</p>
-					<a href="https://megan-gredesky.clientsecure.me" target="_blank" class="btn btn-accent text-xl px-12 py-5 shadow-lg hover:shadow-xl">
-						Schedule Consultation →
-					</a>
+					<ConsultationButton variant="primary" size="large" location="piedmont_hero" text="Schedule Consultation →" />
 				</div>
 			</div>
 		</section>
@@ -137,9 +136,7 @@ import Layout from '../layouts/Layout.astro';
 					Schedule a free 15-minute consultation to learn how Brainspotting can help you.
 				</p>
 				<div class="flex gap-4 justify-center flex-wrap">
-					<a href="https://megan-gredesky.clientsecure.me" target="_blank" class="btn btn-accent text-xl px-12 py-5 shadow-lg hover:shadow-xl">
-						Schedule Consultation
-					</a>
+					<ConsultationButton variant="primary" size="large" location="piedmont_cta" text="Schedule Consultation" />
 					<a href="tel:5105563699" class="btn bg-white text-primary-900 hover:bg-primary-50 text-xl px-12 py-5 shadow-lg">
 						Call (510) 556-3699
 					</a>
